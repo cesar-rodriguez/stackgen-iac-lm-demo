@@ -1,0 +1,9 @@
+{
+  "output": {
+    "id": {
+      "description": "The unique identifier of the Kubernetes Cluster",
+      "sensitive": false,
+      "value": "${civo_kubernetes_cluster.this.id}"
+    }
+  }
+}

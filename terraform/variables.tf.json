@@ -1,0 +1,28 @@
+{
+  "variable": {
+    "firewall_id": [
+      {
+        "description": "The existing firewall ID to use for this cluster",
+        "type": "string",
+        "nullable": false,
+        "sensitive": false
+      }
+    ],
+    "node_count": [
+      {
+        "description": "Number of nodes in the nodepool",
+        "type": "number",
+        "nullable": false,
+        "sensitive": false
+      }
+    ],
+    "size": [
+      {
+        "description": "Size of the nodes in the nodepool.",
+        "type": "string",
+        "nullable": false,
+        "sensitive": false
+      }
+    ]
+  }
+}

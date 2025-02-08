@@ -1,0 +1,7 @@
+{
+  "app_stack_name": "az-to-civo",
+  "iac_type": "Terraform",
+  "provider": "civo",
+  "multi_env": false,
+  "exporter": "terraform"
+}

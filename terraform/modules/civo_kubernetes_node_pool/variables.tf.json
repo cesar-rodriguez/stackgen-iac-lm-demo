@@ -1,0 +1,51 @@
+{
+    "variable": {
+        "node_count": [
+            {
+                "type": "number",
+                "description": "Number of nodes in the nodepool"
+            }
+        ],
+        "size": [
+            {
+                "type": "string",
+                "description": "Size of the nodes in the nodepool."
+            }
+        ],
+        "label": [
+            {
+                "type": "string",
+                "description": "Node pool label, if you don't provide one, we will generate one for you",
+                "nullable": true
+            }
+        ],
+        "labels": [
+            {
+                "type": "map(string)",
+                "description": "Node pool labels",
+                "nullable": true
+            }
+        ],
+        "public_ip_node_pool": [
+            {
+                "type": "bool",
+                "description": "Node pool belongs to the public ip node pool",
+                "nullable": true
+            }
+        ],
+        "taint": [
+            {
+                "type": "list(object({effect: string, key: string, value: string}))",
+                "description": "This attribute allows you to specify taints for nodes in a particular pool, controlling pod scheduling by restricting which pods can be scheduled on those nodes.",
+                "nullable": true,
+                "default": []
+            }
+        ],
+        "cluster_id": [
+            {
+                "type": "string",
+                "description": "The ID of your cluster"
+            }
+        ]
+    }
+}

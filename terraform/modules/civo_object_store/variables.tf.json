@@ -1,0 +1,34 @@
+{
+    "variable": {
+        "name": [
+            {
+                "description": "The name of the Object Store. Must be unique.",
+                "type": "string",
+                "nullable": false
+            }
+        ],
+        "access_key_id": [
+            {
+                "description": "The access key ID from the Object Store credential. If this is not set, a new credential will be created.",
+                "nullable": true,
+                "type": "string"
+            }
+        ],
+        "max_size_gb": [
+            {
+                "default": 500,
+                "description": "The maximum size of the Object Store. Default is 500GB.",
+                "type": "number",
+                "nullable": true
+            }
+        ],
+        "region": [
+            {
+                "default": "LON1",
+                "description": "The region for the Object Store, if not declared we use the region as declared in the provider.",
+                "type": "string",
+                "nullable": true
+            }
+        ]
+    }
+}

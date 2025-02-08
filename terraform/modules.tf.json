@@ -1,0 +1,52 @@
+{
+  "module": {
+    "stackgen_2efaa887-59ac-45e9-8f23-3999fdfebbf9": {
+      "applications": null,
+      "cluster_type": "k3s",
+      "cni": "flannel",
+      "firewall_id": "${var.firewall_id}",
+      "label": null,
+      "labels": {},
+      "name": "pie-nonprod-subnet-test-aks",
+      "network_id": null,
+      "node_count": "${var.node_count}",
+      "public_ip_node_pool": false,
+      "size": "${var.size}",
+      "source": "./modules/civo_kubernetes_cluster",
+      "tags": null,
+      "taint": [],
+      "write_kubeconfig": false
+    },
+    "stackgen_b11a541c-7fbc-4a42-939e-13d4e9133615": {
+      "access_key_id": null,
+      "max_size_gb": 500,
+      "name": "recapreportimages",
+      "region": "LON1",
+      "source": "./modules/civo_object_store"
+    },
+    "stackgen_b47d99d8-8adb-417d-8477-e9ca88280682": {
+      "cluster_id": "${module.stackgen_2efaa887-59ac-45e9-8f23-3999fdfebbf9.id}",
+      "label": "mitest",
+      "labels": {},
+      "node_count": 1,
+      "public_ip_node_pool": false,
+      "size": "${var.size}",
+      "source": "./modules/civo_kubernetes_node_pool",
+      "taint": []
+    },
+    "stackgen_cf99dc96-f989-41a1-bc1c-586f6c65fbfc": {
+      "access_key_id": null,
+      "max_size_gb": 500,
+      "name": "socialmediaimages",
+      "region": "LON1",
+      "source": "./modules/civo_object_store"
+    },
+    "stackgen_d040bc04-23cd-4105-9aac-00c85d67c222": {
+      "access_key_id": null,
+      "max_size_gb": 500,
+      "name": "resources",
+      "region": "LON1",
+      "source": "./modules/civo_object_store"
+    }
+  }
+}

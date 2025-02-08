@@ -1,0 +1,103 @@
+{
+    "variable": {
+        "firewall_id": [
+            {
+                "type": "string",
+                "description": "The existing firewall ID to use for this cluster"
+            }
+        ],
+        "node_count": [
+            {
+                "type": "number",
+                "description": "Number of nodes in the nodepool"
+            }
+        ],
+        "size": [
+            {
+                "type": "string",
+                "description": "Size of the nodes in the nodepool."
+            }
+        ],
+        "label": [
+            {
+                "type": "string",
+                "description": "Node pool label, if you don't provide one, we will generate one for you",
+                "nullable": true
+            }
+        ],
+        "labels": [
+            {
+                "type": "map(string)",
+                "description": "Node pool labels",
+                "nullable": true
+            }
+        ],
+        "public_ip_node_pool": [
+            {
+                "type": "bool",
+                "description": "Node pool belongs to the public ip node pool",
+                "nullable": true
+            }
+        ],
+        "taint": [
+            {
+                "type": "list(object({effect: string, key: string, value: string}))",
+                "description": "This attribute allows you to specify taints for nodes in a particular pool, controlling pod scheduling by restricting which pods can be scheduled on those nodes.",
+                "nullable": true,
+                "default": []
+            }
+        ],
+        "applications": [
+            {
+                "type": "string",
+                "description": "Comma separated list of applications to install. Spaces within application names are fine, but shouldn't be either side of the comma. Application names are case-sensitive; the available applications can be listed with the Civo CLI: 'civo kubernetes applications ls'. If you want to remove a default installed application, prefix it with a '-', e.g. -Traefik. For application that supports plans, you can use 'app_name:app_plan' format e.g. 'Linkerd:Linkerd & Jaeger' or 'MariaDB:5GB'. View list of apps on the Civo CLI --> civo kubernetes apps ls",
+                "nullable": true
+            }
+        ],
+        "cluster_type": [
+            {
+                "type": "string",
+                "description": "The type of cluster to create",
+                "default": "k3s",
+                "nullable": true
+            }
+        ],
+        "cni": [
+            {
+                "type": "string",
+                "description": "The cni for the k3s to install",
+                "default": "flannel",
+                "nullable": true
+            }
+        ],
+        "name": [
+            {
+                "type": "string",
+                "description": "Name for your cluster, must be unique within your account",
+                "nullable": true
+            }
+        ],
+        "network_id": [
+            {
+                "type": "string",
+                "description": "The network for the cluster, if not declared, the default one is used",
+                "nullable": true
+            }
+        ],
+        "tags": [
+            {
+                "type": "string",
+                "description": "Space separated list of tags, to be used freely as required",
+                "nullable": true
+            }
+        ],
+        "write_kubeconfig": [
+            {
+                "type": "bool",
+                "description": "When set to true, kubeconfig is saved to the terraform state file",
+                "default": false,
+                "nullable": true
+            }
+        ]
+    }
+}
